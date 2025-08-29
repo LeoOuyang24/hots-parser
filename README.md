@@ -18,6 +18,6 @@ A tool to parse hots games. I made it to track scrims and games data. It then wr
 7. Set the spreadsheet name in [sheet.py](https://github.com/LeoOuyang24/hots-parser/blob/361a094e0e7dd2ae0bb9f848cbee93447eb557be/sheets.py#L17).
 8. Set the absolute path to heroprotocol's module in [collect.py](https://github.com/LeoOuyang24/hots-parser/blob/9f8621b8e4fca8ede5228904a177a4a0f1accb91/collect.py#L12).
 9. Set the team member names you are interested in [collect.py](https://github.com/LeoOuyang24/hots-parser/blob/9f8621b8e4fca8ede5228904a177a4a0f1accb91/collect.py#L21).
-   Yes this should in fact all be command line arguments lalalala I CANT HEAR YOU!!!! (also like who tf else is running this repo? Is anyone even reading this? Am I truly alone here? Is there a god? If there was why would He allow such pain and suffering to exist?)
+   - Yes this should in fact all be command line arguments lalalala I CANT HEAR YOU!!!! (also like who tf else is running this repo? Is anyone even reading this? Am I truly alone here? Is there a god? If there was why would He allow such pain and suffering to exist?)
 10. `python3 fensad_data.py`
    
