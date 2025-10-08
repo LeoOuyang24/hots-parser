@@ -85,7 +85,8 @@ def getNewest(folderPath):
 #given scrims data and games data, compiles it into one big array
 #input data should be a map of heroe names to data
 #output is an array of objects:
-#   "HERO": hero name
+#   "HERO_NAME": hero name 
+#   "HERO": hero name again (for the hero pic)
 #   "SCRIMS WR": scrim win rate (percentage)
 #   "SCRIM GAMES": number of scrim games 
 #   "MATCHES WR": win rate in matches (percentage)
@@ -95,7 +96,7 @@ def getNewest(folderPath):
 def compileData(scrimsData,gamesData):
     totalData = []
     for heroes in set(list(scrimsData.keys()) + list(gamesData.keys())):
-        totalData.append({"HERO":heroes,"SCRIMS WR": 0, "SCRIM GAMES": 0, "MATCHES WR": 0, "MATCH GAMES": 0, "TOTAL WR": 0,"TOTAL GAMES":0})
+        totalData.append({"HERO_NAME":heroes,"HERO":heroes,"SCRIMS WR": 0, "SCRIM GAMES": 0, "MATCHES WR": 0, "MATCH GAMES": 0, "TOTAL WR": 0,"TOTAL GAMES":0})
         if heroes in scrimsData:
             totalData[-1]["SCRIMS WR"] = scrimsData[heroes]["wins"]/scrimsData[heroes]["games"]
             totalData[-1]["SCRIM GAMES"] = scrimsData[heroes]["games"]
