@@ -13,7 +13,9 @@ scrimsData = getData(scrimsFolder)
 upToDate = max(getNewest(gamesFolder),getNewest(scrimsFolder))
 
 #combine scrims and games data
-totalData = compileData(scrimsData,gamesData)
-        
+totalHeroData = compileData(scrimsData["heroes"],gamesData["heroes"])
+totalMapsData = compileData(scrimsData["maps"],gamesData["maps"])        
+
 #write that shit to google sheets;
-writeData(totalData,upToDate)
+writeData(totalHeroData,upToDate)
+writeData(totalMapsData,upToDate,True)
