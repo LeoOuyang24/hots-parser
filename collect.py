@@ -18,7 +18,14 @@ import os
 
 #This file handles all HOTS data. Everything here should work without locally without internet access
 
-fensad = ["Ruglord","RobotWizard","Atd09","Psyqo","JazzyFast","JazzyVal","FenixEnjoyer"]
+#fensad = ["Ruglord","RobotWizard","Atd09","Psyqo","JazzyFast","JazzyVal","FenixEnjoyer"]
+
+fensad = [ #4815038, #grzzzmoore, other accounts unaccounted for
+			9466952, #atd09
+			7860385, #ruglord
+			8742524, #psyqo
+			2190605, 10918486, #robotwizard and fenixenjoyer
+			10871576] #jazzyfast, jazzyval currently not in the data
 
 
 #get replay details
@@ -61,18 +68,18 @@ def getData(folderPath):
 			deets = getDetails(fullPath) #get the details
 			won = None
 			for key in deets["m_playerList"]: #for each hero in that game...
-					if key["m_name"].decode("utf-8") in fensad:
-						#figure out if we won, dependent on the first fensad member in the party's results (so if we ever do inhouses this wont work)
-						if won == None:
-							won = key["m_result"] == 1
+				if key["m_toon"]["m_id"] in fensad:
+					#figure out if we won, dependent on the first fensad member in the party's results (so if we ever do inhouses this wont work)
+					if won == None:
+						won = key["m_result"] == 1
 
-						hero = key["m_hero"].decode("utf-8") 
-						if hero not in heroData:
-							heroData[hero] = {"wins": 0, "games": 0}
+					hero = key["m_hero"].decode("utf-8") 
+					if hero not in heroData:
+						heroData[hero] = {"wins": 0, "games": 0}
 
-						heroData[hero]["wins"] += won
-						heroData[hero]["games"] += 1
-		   	
+					heroData[hero]["wins"] += won
+					heroData[hero]["games"] += 1
+	   	
 		   	#map specific data
 			mapName = deets["m_title"].decode("utf-8")
 			if mapName not in mapData:
